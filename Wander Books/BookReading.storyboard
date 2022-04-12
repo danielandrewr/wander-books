@@ -1,30 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LCH-dA-uvy">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="s0d-6b-0kx">
+        <!--Book Reading View Controller-->
+        <scene sceneID="i6Z-Ex-XgH">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController storyboardIdentifier="BookCover" id="LCH-dA-uvy" customClass="BookReadingViewController" customModule="KidReadingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Egr-0W-lAK">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nn1-xT-7Hr">
+                                <rect key="frame" x="0.0" y="279" width="390" height="339"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="George MacDonald" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGr-Ma-OzK">
+                                <rect key="frame" x="0.0" y="200" width="390" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl4-lP-wKn">
+                                <rect key="frame" x="16" y="44" width="50" height="46.666666666666657"/>
+                                <color key="tintColor" red="0.44705882349999998" green="0.69803921570000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <inset key="imageEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" buttonSize="large">
+                                    <imageReference key="image" image="xmark.circle" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="default" weight="medium"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onBackButtonPressed:" destination="LCH-dA-uvy" eventType="touchUpInside" id="1vZ-KN-0uz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Princess and the Goblin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbw-1p-d4w">
+                                <rect key="frame" x="0.0" y="166" width="390" height="26"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SGt-b0-V8O"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CGr-Ma-OzK" firstAttribute="top" secondItem="Rbw-1p-d4w" secondAttribute="bottom" constant="8" id="57s-uI-Ibg"/>
+                            <constraint firstItem="Rbw-1p-d4w" firstAttribute="top" secondItem="gl4-lP-wKn" secondAttribute="bottom" constant="75.329999999999998" id="Bgy-1v-LeZ"/>
+                            <constraint firstItem="SGt-b0-V8O" firstAttribute="bottom" secondItem="Nn1-xT-7Hr" secondAttribute="bottom" constant="192" id="NWE-f3-cgg"/>
+                            <constraint firstItem="CGr-Ma-OzK" firstAttribute="leading" secondItem="SGt-b0-V8O" secondAttribute="leading" id="RKl-Rb-OgO"/>
+                            <constraint firstItem="Nn1-xT-7Hr" firstAttribute="leading" secondItem="SGt-b0-V8O" secondAttribute="leading" id="a7o-HL-PWd"/>
+                            <constraint firstItem="CGr-Ma-OzK" firstAttribute="trailing" secondItem="SGt-b0-V8O" secondAttribute="trailing" id="geE-71-Wce"/>
+                            <constraint firstItem="Nn1-xT-7Hr" firstAttribute="trailing" secondItem="SGt-b0-V8O" secondAttribute="trailing" id="iS1-NC-r0e"/>
+                            <constraint firstItem="gl4-lP-wKn" firstAttribute="top" secondItem="SGt-b0-V8O" secondAttribute="top" id="jpU-kE-Mmi"/>
+                            <constraint firstItem="Rbw-1p-d4w" firstAttribute="leading" secondItem="SGt-b0-V8O" secondAttribute="leading" id="l86-YJ-9wz"/>
+                            <constraint firstItem="SGt-b0-V8O" firstAttribute="trailing" secondItem="gl4-lP-wKn" secondAttribute="trailing" constant="324" id="lxi-Du-IdH"/>
+                            <constraint firstItem="Rbw-1p-d4w" firstAttribute="trailing" secondItem="SGt-b0-V8O" secondAttribute="trailing" id="qrd-GU-6AK"/>
+                            <constraint firstItem="gl4-lP-wKn" firstAttribute="leading" secondItem="SGt-b0-V8O" secondAttribute="leading" constant="16" id="ul3-cf-h4c"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="xXO-Kx-bIl"/>
+                    <connections>
+                        <outlet property="authorLabel" destination="CGr-Ma-OzK" id="f5N-aK-KO3"/>
+                        <outlet property="backButton" destination="gl4-lP-wKn" id="Eeu-sD-pnl"/>
+                        <outlet property="coverImageView" destination="Nn1-xT-7Hr" id="Zqo-O3-dSA"/>
+                        <outlet property="titleLabel" destination="Rbw-1p-d4w" id="c7A-zt-Fjh"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IuZ-cf-ydt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1550.7246376811595" y="553.125"/>
+        </scene>
+        <!--BookReader-->
+        <scene sceneID="lt8-s4-Ac7">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="BookReader" storyboardName="ContentBookReading" referencedIdentifier="BookReader" id="zBq-2q-kXr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sYD-IH-ROU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2246.376811594203" y="553.125"/>
         </scene>
     </scenes>
     <resources>
+        <image name="xmark.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
+

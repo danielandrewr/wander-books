@@ -1,29 +1,44 @@
 //
-//  LibraryViewController.swift
-//  Wander Books
+//  ViewController.swift
+//  KidReadingApp
 //
-//  Created by Daniel Roong on 13/04/22.
+//  Created by Anastasia Agustine on 06/04/22.
 //
 
 import UIKit
 
-class LibraryViewController: UIViewController {
 
+class LibraryViewController: UIViewController {
+    
+    var listBook: [Book] = []
+
+    @IBOutlet weak var navLibrary: UINavigationBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
+        
+        // Configure Library Title
+        configureTopTitle()
+        
+        // Sets the View Recently Read
+        
+        // Shows the data
+        
+        // User Pick's
+        
+        // Do something else
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    /**
+        Configures the top title of a View
+     */
+    private func configureTopTitle() {
+        let titleLabel = UILabel()
+        titleLabel.text = "Library"
+        titleLabel.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.bold)
+        titleLabel.textAlignment = .center
+        self.navigationItem.titleView = titleLabel
     }
-    */
-
+   
 }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		26E599E82805E95C0038CC5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E599E72805E95C0038CC5F /* AppDelegate.swift */; };
 		26E599EA2805E95C0038CC5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E599E92805E95C0038CC5F /* SceneDelegate.swift */; };
-		26E599EC2805E95C0038CC5F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E599EB2805E95C0038CC5F /* ViewController.swift */; };
 		26E599EF2805E95C0038CC5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E599ED2805E95C0038CC5F /* Main.storyboard */; };
 		26E599F12805E95D0038CC5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26E599F02805E95D0038CC5F /* Assets.xcassets */; };
 		26E599F42805E95D0038CC5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E599F22805E95D0038CC5F /* LaunchScreen.storyboard */; };
@@ -26,13 +25,16 @@
 		26E59A102805EA3D0038CC5F /* BookReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E59A0F2805EA3D0038CC5F /* BookReadingViewController.swift */; };
 		26E59A122805EA490038CC5F /* ContentBookReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E59A112805EA490038CC5F /* ContentBookReadingViewController.swift */; };
 		26E59A142805EA530038CC5F /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E59A132805EA530038CC5F /* QuizViewController.swift */; };
+		26E59A162805F3220038CC5F /* BookStoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E59A152805F3220038CC5F /* BookStoreCollectionViewCell.swift */; };
+		26E59A182805F33F0038CC5F /* GenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E59A172805F33F0038CC5F /* GenreCollectionViewCell.swift */; };
+		26E59A1A2805F3640038CC5F /* SpecificGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E59A192805F3640038CC5F /* SpecificGenreCollectionViewCell.swift */; };
+		26E59A1C2805F39B0038CC5F /* GenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E59A1B2805F39B0038CC5F /* GenreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		26E599E42805E95C0038CC5F /* Wander Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wander Books.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26E599E72805E95C0038CC5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26E599E92805E95C0038CC5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		26E599EB2805E95C0038CC5F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		26E599EE2805E95C0038CC5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26E599F02805E95D0038CC5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26E599F32805E95D0038CC5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +52,10 @@
 		26E59A0F2805EA3D0038CC5F /* BookReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReadingViewController.swift; sourceTree = "<group>"; };
 		26E59A112805EA490038CC5F /* ContentBookReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBookReadingViewController.swift; sourceTree = "<group>"; };
 		26E59A132805EA530038CC5F /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		26E59A152805F3220038CC5F /* BookStoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreCollectionViewCell.swift; sourceTree = "<group>"; };
+		26E59A172805F33F0038CC5F /* GenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCollectionViewCell.swift; sourceTree = "<group>"; };
+		26E59A192805F3640038CC5F /* SpecificGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificGenreCollectionViewCell.swift; sourceTree = "<group>"; };
+		26E59A1B2805F39B0038CC5F /* GenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +90,6 @@
 			children = (
 				26E599E72805E95C0038CC5F /* AppDelegate.swift */,
 				26E599E92805E95C0038CC5F /* SceneDelegate.swift */,
-				26E599EB2805E95C0038CC5F /* ViewController.swift */,
 				26E599ED2805E95C0038CC5F /* Main.storyboard */,
 				26E599F02805E95D0038CC5F /* Assets.xcassets */,
 				26E599F22805E95D0038CC5F /* LaunchScreen.storyboard */,
@@ -102,6 +107,10 @@
 				26E59A0F2805EA3D0038CC5F /* BookReadingViewController.swift */,
 				26E59A112805EA490038CC5F /* ContentBookReadingViewController.swift */,
 				26E59A132805EA530038CC5F /* QuizViewController.swift */,
+				26E59A172805F33F0038CC5F /* GenreCollectionViewCell.swift */,
+				26E59A152805F3220038CC5F /* BookStoreCollectionViewCell.swift */,
+				26E59A192805F3640038CC5F /* SpecificGenreCollectionViewCell.swift */,
+				26E59A1B2805F39B0038CC5F /* GenreViewController.swift */,
 			);
 			path = "Wander Books";
 			sourceTree = "<group>";
@@ -183,14 +192,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26E599EC2805E95C0038CC5F /* ViewController.swift in Sources */,
+				26E59A1C2805F39B0038CC5F /* GenreViewController.swift in Sources */,
 				26E59A142805EA530038CC5F /* QuizViewController.swift in Sources */,
+				26E59A162805F3220038CC5F /* BookStoreCollectionViewCell.swift in Sources */,
 				26E59A0E2805EA310038CC5F /* BookInformationViewController.swift in Sources */,
+				26E59A182805F33F0038CC5F /* GenreCollectionViewCell.swift in Sources */,
 				26E59A0A2805EA170038CC5F /* LibraryViewController.swift in Sources */,
 				26E599E82805E95C0038CC5F /* AppDelegate.swift in Sources */,
 				26E599EA2805E95C0038CC5F /* SceneDelegate.swift in Sources */,
 				26E59A082805E9DE0038CC5F /* Model.swift in Sources */,
 				26E59A102805EA3D0038CC5F /* BookReadingViewController.swift in Sources */,
+				26E59A1A2805F3640038CC5F /* SpecificGenreCollectionViewCell.swift in Sources */,
 				26E59A122805EA490038CC5F /* ContentBookReadingViewController.swift in Sources */,
 				26E59A0C2805EA250038CC5F /* BookStoreViewController.swift in Sources */,
 			);
