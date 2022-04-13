@@ -11,7 +11,7 @@
         <!--Quiz View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="Quiz" id="Y6W-OH-hqX" customClass="QuizViewController" customModule="Wander_Books" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Quiz" id="Y6W-OH-hqX" customClass="QuizViewController" customModule="KidReadingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,29 +26,32 @@
                                 <rect key="frame" x="280" y="696" width="83" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Next"/>
+                                <connections>
+                                    <action selector="nextButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bfe-zc-ylj"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6X-Sg-UTt">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6X-Sg-UTt">
                                 <rect key="frame" x="39" y="512" width="314" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Button"/>
                                 <connections>
-                                    <action selector="answerClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EMe-ut-Zzg"/>
+                                    <action selector="buttonSelection:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="p9f-w6-fZY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mL-TG-zrw">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mL-TG-zrw">
                                 <rect key="frame" x="39" y="562" width="314" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Button"/>
                                 <connections>
-                                    <action selector="answerClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4lW-96-6LQ"/>
+                                    <action selector="buttonSelection:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ydk-dm-lzC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7v-JO-ZBF">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7v-JO-ZBF">
                                 <rect key="frame" x="39" y="612" width="314" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Button"/>
                                 <connections>
-                                    <action selector="answerClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iCe-Xq-cpa"/>
+                                    <action selector="buttonSelection:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="MV0-D2-aGw"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yMS-VP-WbW">
@@ -58,12 +61,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZ1-Zy-ewx">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZ1-Zy-ewx">
                                 <rect key="frame" x="39" y="462" width="314" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Button"/>
                                 <connections>
-                                    <action selector="answerClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="s8S-NV-Zbm"/>
+                                    <action selector="buttonSelection:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3yQ-tt-r5T"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNE-xo-0iZ">
@@ -141,6 +144,10 @@
                         <outlet property="progressLabel" destination="EHp-b4-T4m" id="eW5-gQ-8jz"/>
                         <outlet property="questionCoverImage" destination="xqM-d9-Qeq" id="8Rq-52-FoG"/>
                         <outlet property="questionTextView" destination="yMS-VP-WbW" id="JgK-Mv-aOo"/>
+                        <outletCollection property="buttons" destination="NZ1-Zy-ewx" collectionClass="NSMutableArray" id="LTv-ew-K0c"/>
+                        <outletCollection property="buttons" destination="x6X-Sg-UTt" collectionClass="NSMutableArray" id="bbN-bh-e9A"/>
+                        <outletCollection property="buttons" destination="5mL-TG-zrw" collectionClass="NSMutableArray" id="Lm9-BD-YmH"/>
+                        <outletCollection property="buttons" destination="D7v-JO-ZBF" collectionClass="NSMutableArray" id="7sg-sC-KaC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

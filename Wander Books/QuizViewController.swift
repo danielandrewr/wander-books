@@ -17,50 +17,62 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var choiceButton4: UIButton!
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBarView: UIProgressView!
-    
+    @IBOutlet var buttons: [UIButton]!
     //Data
     var gameModels = [Question]()
     var currentQuestion: Question?
-    
+    var point: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionCoverImage.image = UIImage(named: "Dummy1")
+//        questionCoverImage.image = UIImage(named: "Dummy1")
         setupQuestions()
         configureUI(question: gameModels.first!)
     }
     
     
     //functions
-    @IBAction func answerClicked(_ sender: UIButton) {
-        let choiceButtons: [UIButton] = [choiceButton1,choiceButton2,choiceButton3,choiceButton4]
+    @IBAction func buttonSelection (_ sender: UIButton){
+        deselectAllButtons()
+        sender.isSelected = true
+    }
+    
+    @IBAction func nextButtonAction(_ sender: UIButton) {
+        
+//        let choiceButtons: [UIButton] = [choiceButton1,choiceButton2,choiceButton3,choiceButton4]
         guard let question = currentQuestion else{
             return
         }
-        let index = choiceButtons.firstIndex(of: sender) ?? 0
+        let index = buttons.firstIndex(where: {$0.isSelected == true}) ?? 0
         let answer = question.answers[index]
-        
+
+        //if answer is correct, gain 1 point
         if checkAnswer(answer: answer, question: question){
-            //the answer is correct, go to the next question
-            if let index = gameModels.firstIndex(where: {$0.text == currentQuestion?.text}){
-                if index < (gameModels.count - 1) {
-                    //proceed to the next question
-                    let nextQuestion = gameModels[index+1]
-                    configureUI(question: nextQuestion)
-                } else{
-                    //end of question, end the game
-                    let nextQuestion = gameModels[index]
-                    configureUI(question: nextQuestion)
-                    let alert = UIAlertController(title: "Done", message: "Yay! you finished the quiz", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
-                    present(alert, animated: true)
-                }
+            point = point + 1
+        }
+
+        //find the index
+        if let index = gameModels.firstIndex(where: {$0.text == currentQuestion?.text}){
+            if index < (gameModels.count-1){
+                //continue to next question
+                let nextQuestion = gameModels[index+1]
+                configureUI(question: nextQuestion)
+            } else {
+                //if get to the last question, end quiz
+                let alert = UIAlertController(title:"Done!", message: "Woohoo! You got \(point) points!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                present(alert, animated: true)
             }
-        } else {
-            //the answer is wrong
-            let alert = UIAlertController(title: "Wrong", message: "Whoops! kamu salah", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
-            present(alert, animated: true)
+        }
+        
+        
+    }
+    
+    private func deselectAllButtons(){
+        for buttonElement in buttons {
+            if let button = buttonElement as UIButton?{
+                button.isSelected = false
+            }
         }
     }
     
@@ -82,7 +94,7 @@ class QuizViewController: UIViewController {
         }
     }
     
-    private func checkAnswer(answer: Answer, question: Question) -> Bool {
+    private func checkAnswer(answer: Answer, question: Question) -> Bool{
         return question.answers.contains(where: {$0.text == answer.text}) && answer.correct
     }
     
@@ -106,6 +118,5 @@ class QuizViewController: UIViewController {
                 Answer(text: "di bawah pohon", correct: true)
         ]))
     }
-    
 
 }
