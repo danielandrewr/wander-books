@@ -98,6 +98,9 @@ class QuizViewController: UIViewController {
         questionTextView.text = question.text
         questionCoverImage.image = question.questionImage
         
+        
+        
+        
         let currIndex = gameModels.firstIndex(where: {$0.text == currentQuestion?.text}) ?? 0
         progressLabel.text = "\(currIndex+1) / \(gameModels.count)"
         progressBarView.setProgress((Float(currIndex+1)/Float(gameModels.count)), animated: true)
@@ -113,7 +116,7 @@ class QuizViewController: UIViewController {
     }
     
     private func setupQuestions(){
-        gameModels.append(Question(text: "Siapa yang sering menyombongkan kemampuan berlarinya?", questionImage: nil, answers: [
+        gameModels.append(Question(text: "Siapa yang sering menyombongkan kemampuan berlarinya?", questionImage: UIImage(named: "Panel 3"), answers: [
                 Answer(text: "tupai", correct: false),
                 Answer(text: "rubah", correct: false),
                 Answer(text: "kelinci", correct: true),
