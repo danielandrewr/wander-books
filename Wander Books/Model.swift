@@ -52,6 +52,7 @@ let genreSeed = [
 
 //User's coin
 var userCoin = 0
+
 struct Question {
     let text: String
     let questionImage: UIImage?

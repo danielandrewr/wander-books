@@ -18,6 +18,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBarView: UIProgressView!
     @IBOutlet var buttons: [UIButton]!
+    @IBOutlet weak var userCoinLabel: UILabel!
     
     //Data
     var gameModels = [Question]()
@@ -30,6 +31,7 @@ class QuizViewController: UIViewController {
 //        questionCoverImage.image = UIImage(named: "Dummy1")
         setupQuestions()
         configureUI(question: gameModels.first!)
+        userCoinLabel.text = "\(userCoin)"
     }
     
     
@@ -56,8 +58,8 @@ class QuizViewController: UIViewController {
         if checkAnswer(answer: answer, question: question){
             point = point + 1
         }
-        deselectAllButtons()
         
+        deselectAllButtons()
         //find the index
         if let index = gameModels.firstIndex(where: {$0.text == currentQuestion?.text}){
             if index < (gameModels.count-1){
@@ -66,7 +68,9 @@ class QuizViewController: UIViewController {
                 configureUI(question: nextQuestion)
             } else {
                 //if get to the last question, end quiz
+                userCoin += point
                 showFeedback()
+                
             }
         }
     }

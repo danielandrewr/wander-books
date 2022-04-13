@@ -92,7 +92,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="diamond.circle" catalog="system"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Point" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGi-YA-y0g">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Point" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGi-YA-y0g">
                                 <rect key="frame" x="266" y="65" width="50" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
@@ -156,6 +156,7 @@
                         <outlet property="progressLabel" destination="EHp-b4-T4m" id="eW5-gQ-8jz"/>
                         <outlet property="questionCoverImage" destination="xqM-d9-Qeq" id="8Rq-52-FoG"/>
                         <outlet property="questionTextView" destination="yMS-VP-WbW" id="JgK-Mv-aOo"/>
+                        <outlet property="userCoinLabel" destination="eGi-YA-y0g" id="xa3-6T-qxn"/>
                         <outletCollection property="buttons" destination="NZ1-Zy-ewx" collectionClass="NSMutableArray" id="LTv-ew-K0c"/>
                         <outletCollection property="buttons" destination="x6X-Sg-UTt" collectionClass="NSMutableArray" id="bbN-bh-e9A"/>
                         <outletCollection property="buttons" destination="5mL-TG-zrw" collectionClass="NSMutableArray" id="Lm9-BD-YmH"/>
