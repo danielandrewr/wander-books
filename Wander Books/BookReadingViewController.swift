@@ -8,8 +8,6 @@ import UIKit
 
 class BookReadingViewController: UIViewController {
 
-    @IBOutlet weak var backButton: UIButton!
-    
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var authorLabel: UILabel!
@@ -45,9 +43,5 @@ class BookReadingViewController: UIViewController {
         }
         readerViewControl.modalPresentationStyle = .fullScreen
         present(readerViewControl, animated: true, completion: nil)
-    }
-    
-    @IBAction func onBackButtonPressed(_ sender: Any) {
-        // performSegue or instantioanStoryboard to BookInformation
     }
 }
