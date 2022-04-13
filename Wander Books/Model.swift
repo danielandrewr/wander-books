@@ -46,3 +46,14 @@ let genreSeed = [
     Genre(name: "Mystery", image: UIImage(named: "Dummy6")),
     Genre(name: "TEst!", image: UIImage(named: "Dummy6")),
 ]
+
+struct Question {
+    let text: String
+    let questionImage: UIImage?
+    let answers: [Answer]
+}
+
+struct Answer{
+    let text: String
+    let correct: Bool
+}
