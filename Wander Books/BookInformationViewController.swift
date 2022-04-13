@@ -22,6 +22,7 @@ class BookInformationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(selectedBook.isOwned)
         arrOfBook = feeder.seedBook()
         bookTitleLabel.text = selectedBook.title
 //        bookTitleLabel.font = UIFont(name: "SF Pro RoundedBold", size: 21)
@@ -37,21 +38,30 @@ class BookInformationViewController: UIViewController {
         }
 
         bookSynopsisTextView.text = selectedBook.synopsis
-        if selectedBook.isOwned {
-            bookCoverImage.image = selectedBook.cover
-            unlockBookButton.setTitle("Read Book", for: .normal)
-        } else {
-            bookCoverImage.image = selectedBook.notOwnedCover
-        }
+        checkBookStatus()
+    }
+    
+    private func checkBookStatus() {
+        let status = selectedBook.isOwned
+        let unlockBtnTitle = (status == true) ? "Read Book" : "Unlock Book"
+        unlockBookButton.setTitle(unlockBtnTitle, for: .normal)
         
+        if status == false {
+            bookCoverImage.image = selectedBook.notOwnedCover
+        } else {
+            bookCoverImage.image = selectedBook.cover
+        }
     }
-  
-    @IBAction func claimBook(_ sender: UIButton){
-        let buttonUnlockLabel = unlockBookButton.titleLabel?.text
-        if buttonUnlockLabel == "Unlock Book" {
-            selectedBook.isOwned = true
-            unlockBookButton.setTitle("Read Book", for: .normal)
-        } else {return}
+    
+    @IBAction func onButtonPressed(_ sender: Any) {
+        if (unlockBookButton.titleLabel?.text == "Read Book") {
+            let bookReadingViewController = UIStoryboard(name: "BookReading", bundle: nil)
+            let bookReading = bookReadingViewController.instantiateViewController(withIdentifier: "BookCover") as! BookReadingViewController
+            bookReading.selectedBook = selectedBook
+            
+            self.navigationController?.pushViewController(bookReading, animated: true)
+        } else {
+            // buy book
+        }
     }
-
 }

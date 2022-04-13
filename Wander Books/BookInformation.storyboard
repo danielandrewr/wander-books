@@ -74,7 +74,7 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="claimBook:" destination="v9x-Nr-o6b" eventType="touchUpInside" id="VJR-wE-Xh6"/>
+                                    <action selector="onButtonPressed:" destination="v9x-Nr-o6b" eventType="touchUpInside" id="2ch-RV-Lvq"/>
                                 </connections>
                             </button>
                         </subviews>
