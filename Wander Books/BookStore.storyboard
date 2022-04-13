@@ -304,6 +304,7 @@
             <point key="canvasLocation" x="795" y="559"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.44705882349999998" green="0.69803921570000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
     <resources>
         <image name="bag.fill" catalog="system" width="128" height="128"/>
         <image name="diamond.circle.fill" catalog="system" width="128" height="121"/>

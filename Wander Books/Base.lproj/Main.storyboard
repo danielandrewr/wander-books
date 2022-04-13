@@ -47,6 +47,7 @@
             <point key="canvasLocation" x="-2243" y="-1431"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.44705882352941173" green="0.69803921568627447" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
     <resources>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
