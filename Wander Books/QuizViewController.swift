@@ -58,12 +58,28 @@ class QuizViewController: UIViewController {
                 let nextQuestion = gameModels[index+1]
                 configureUI(question: nextQuestion)
             } else {
+                showFeedback()
                 //if get to the last question, end quiz
-                let alert = UIAlertController(title:"Done!", message: "Woohoo! You got \(point) points!", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
-                present(alert, animated: true)
+//                let alert = UIAlertController(title:"Done!", message: "Woohoo! You got \(point) points!", preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+//                present(alert, animated: true)
             }
         }
+    }
+    
+    private func showFeedback(){
+        let alert = UIAlertController(title:"Done!", message: "Woohoo! You got \(point) points!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: {action in self.segueBacktoBookInfo()}))
+        present(alert, animated: true)
+    }
+    
+    
+    private func segueBacktoBookInfo(){
+        let bookInfo = UIStoryboard(name: "BookInformation", bundle: nil)
+        let viewController = bookInfo.instantiateViewController(withIdentifier: "BookInformationViewController")
+        
+//        present(viewController, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     private func deselectAllButtons(){
