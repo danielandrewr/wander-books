@@ -27,8 +27,7 @@ class BookStoreViewController: UIViewController {
         genreCollectionView.delegate = self
         genreCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
         
-        coinAmount.text = "100"
-        
+        coinAmount.text = "\(userCoin)"
     }
     
 }
@@ -63,17 +62,25 @@ extension BookStoreViewController: UICollectionViewDataSource {
 extension BookStoreViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == recommendCollectionView {
-            print(bookSeed?[indexPath.row].title ?? "empty!!")
-            // Instantiate SecondViewController
+        
+            let bookInfoStoryboard = UIStoryboard(name: "BookInformation", bundle: nil)
+            let bookInfoVC = bookInfoStoryboard.instantiateViewController(withIdentifier: "BookInformationViewController") as! BookInformationViewController
+                
+            // Set selectedGenre's value to the tapped genre.
+            bookInfoVC.selectedBook = bookSeed?[indexPath.row] ?? Book(title: "", author: "", genre: [], isOwned: false, requiredPoints: 0)
+                
+            // Take user to genreViewController
+            self.navigationController?.pushViewController(bookInfoVC, animated: true)
+           
            
         } else {
             print(genreSeed[indexPath.row].name)
             let genreViewController = self.storyboard?.instantiateViewController(withIdentifier: "GenreViewController") as! GenreViewController
                 
-            // Set "Hello World" as a value to myStringValue
+            // Set selectedGenre's value to the tapped genre.
             genreViewController.selectedGenre = genreSeed[indexPath.row].name
                 
-            // Take user to SecondViewController
+            // Take user to genreViewController
             self.navigationController?.pushViewController(genreViewController, animated: true)
         }
     }
@@ -85,7 +92,7 @@ extension BookStoreViewController: UICollectionViewDelegateFlowLayout {
         if collectionView == genreCollectionView {
             return CGSize(width: 100, height: 140)
         }
-        return CGSize(width: 125, height: 170)
+        return CGSize(width: 125, height: 200)
     }
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 //        return 20

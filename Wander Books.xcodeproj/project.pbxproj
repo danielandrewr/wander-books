@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F9E0F0A2806A3590067C4CB /* LibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9E0F092806A3590067C4CB /* LibraryCollectionViewCell.swift */; };
 		26E599E82805E95C0038CC5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E599E72805E95C0038CC5F /* AppDelegate.swift */; };
 		26E599EA2805E95C0038CC5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E599E92805E95C0038CC5F /* SceneDelegate.swift */; };
 		26E599EF2805E95C0038CC5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E599ED2805E95C0038CC5F /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F9E0F092806A3590067C4CB /* LibraryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCollectionViewCell.swift; sourceTree = "<group>"; };
 		26E599E42805E95C0038CC5F /* Wander Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wander Books.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26E599E72805E95C0038CC5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26E599E92805E95C0038CC5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				26E59A152805F3220038CC5F /* BookStoreCollectionViewCell.swift */,
 				26E59A192805F3640038CC5F /* SpecificGenreCollectionViewCell.swift */,
 				26E59A1B2805F39B0038CC5F /* GenreViewController.swift */,
+				1F9E0F092806A3590067C4CB /* LibraryCollectionViewCell.swift */,
 			);
 			path = "Wander Books";
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				26E59A0A2805EA170038CC5F /* LibraryViewController.swift in Sources */,
 				26E599E82805E95C0038CC5F /* AppDelegate.swift in Sources */,
 				26E599EA2805E95C0038CC5F /* SceneDelegate.swift in Sources */,
+				1F9E0F0A2806A3590067C4CB /* LibraryCollectionViewCell.swift in Sources */,
 				26E59A082805E9DE0038CC5F /* Model.swift in Sources */,
 				26E59A102805EA3D0038CC5F /* BookReadingViewController.swift in Sources */,
 				26E59A1A2805F3640038CC5F /* SpecificGenreCollectionViewCell.swift in Sources */,

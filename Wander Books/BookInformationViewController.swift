@@ -18,30 +18,50 @@ class BookInformationViewController: UIViewController {
     //BookDummyData
     var arrOfBook :[Book] = []
     var feeder = BookFeeder()
+    var selectedBook: Book = Book(title: "", author: "", genre: [], isOwned: false, requiredPoints: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(selectedBook.isOwned)
         arrOfBook = feeder.seedBook()
-        bookTitleLabel.text = arrOfBook[0].title
+        bookTitleLabel.text = selectedBook.title
 //        bookTitleLabel.font = UIFont(name: "SF Pro RoundedBold", size: 21)
-        bookAuthorLabel.text = arrOfBook[0].author
-        genreListLabel.text = arrOfBook[0].genre[0]
-        bookSynopsisTextView.text = arrOfBook[0].synopsis
-        if arrOfBook[0].isOwned {
-            bookCoverImage.image = arrOfBook[0].cover
-            unlockBookButton.setTitle("Read Book", for: .normal)
-        } else {
-            bookCoverImage.image = arrOfBook[0].notOwnedCover
-        }
+        bookAuthorLabel.text = selectedBook.author
         
-    }
-  
-    @IBAction func claimBook(_ sender: UIButton){
-        let buttonUnlockLabel = unlockBookButton.titleLabel?.text
-        if buttonUnlockLabel == "Unlock Book" {
-            arrOfBook[0].isOwned = true
-            unlockBookButton.setTitle("Read Book", for: .normal)
-        } else {return}
-    }
+        genreListLabel.text! = ""
+        for (index, genre) in selectedBook.genre.enumerated() {
+            if index == selectedBook.genre.count - 1 {
+                genreListLabel.text! += "\(genre)"
+            } else {
+                genreListLabel.text! += "\(genre), "
+            }
+        }
 
+        bookSynopsisTextView.text = selectedBook.synopsis
+        checkBookStatus()
+    }
+    
+    private func checkBookStatus() {
+        let status = selectedBook.isOwned
+        let unlockBtnTitle = (status == true) ? "Read Book" : "Unlock Book"
+        unlockBookButton.setTitle(unlockBtnTitle, for: .normal)
+        
+        if status == false {
+            bookCoverImage.image = selectedBook.notOwnedCover
+        } else {
+            bookCoverImage.image = selectedBook.cover
+        }
+    }
+    
+    @IBAction func onButtonPressed(_ sender: Any) {
+        if (unlockBookButton.titleLabel?.text == "Read Book") {
+            let bookReadingViewController = UIStoryboard(name: "BookReading", bundle: nil)
+            let bookReading = bookReadingViewController.instantiateViewController(withIdentifier: "BookCover") as! BookReadingViewController
+            bookReading.selectedBook = selectedBook
+            
+            self.navigationController?.pushViewController(bookReading, animated: true)
+        } else {
+            // buy book
+        }
+    }
 }
