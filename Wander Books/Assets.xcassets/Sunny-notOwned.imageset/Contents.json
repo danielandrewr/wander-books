@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "sunny2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "sunny3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
