@@ -23,8 +23,8 @@ struct Book{
 struct BookFeeder{
     func seedBook() -> [Book] {
         return [
-            Book(title: "The Tortoise and the Hare", author: "Aesop", cover: nil, notOwnedCover: UIImage(named: "Dummy3"), genre: ["fable"], isOwned: false, requiredPoints: 10, bookPages: nil, bookTexts: nil, synopsis: "Di suatu hutan yang dipenuhi dengan kehidupan para hewan, hiduplah seekor kelinci angkuh yang suka merendahkan hewan lain yang lebih lambat daripadanya. Suatu ketika, kelinci menemui seekor kura-kura dan mengajaknya untuk berlomba lari..."),
-            Book(title: "My Home is the Sea", author: "Author A", cover: nil, notOwnedCover: UIImage(named: "Dummy1"), genre: ["fable"], isOwned: false, requiredPoints: 10, bookPages: nil, bookTexts: nil),
+            Book(title: "The Tortoise and the Hare", author: "Aesop", cover: UIImage(named: "Dummy1"), notOwnedCover: UIImage(named: "Dummy1"), genre: ["Fable", "Fantasy", "Comedy"], isOwned: false, requiredPoints: 10, bookPages: nil, bookTexts: nil, synopsis: "Di suatu hutan yang dipenuhi dengan kehidupan para hewan, hiduplah seekor kelinci angkuh yang suka merendahkan hewan lain yang lebih lambat daripadanya. Suatu ketika, kelinci menemui seekor kura-kura dan mengajaknya untuk berlomba lari..."),
+            Book(title: "My Home is the Sea", author: "Author A", cover: nil, notOwnedCover: UIImage(named: "Dummy1"), genre: ["fable"], isOwned: false, requiredPoints: 10, bookPages: nil, bookTexts: nil, synopsis: "Di suatu hutan yang dipenuhi dengan kehidupan para hewan, hiduplah seekor kelinci angkuh yang suka merendahkan hewan lain yang lebih lambat daripadanya. Suatu ketika, kelinci menemui seekor kura-kura dan mengajaknya untuk berlomba lari..."),
             Book(title: "Princess and the Goblin", author: "Author B", cover: nil, notOwnedCover: UIImage(named: "Dummy2"), genre: ["fable"], isOwned: false, requiredPoints: 10, bookPages: nil, bookTexts: nil),
             Book(title: "Sunny", author: "Author C", cover: nil, notOwnedCover: UIImage(named: "Dummy4"), genre: ["fable"], isOwned: false, requiredPoints: 10, bookPages: nil, bookTexts: nil)
             

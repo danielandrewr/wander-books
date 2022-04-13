@@ -11,7 +11,7 @@
         <!--Book Information View Controller-->
         <scene sceneID="hgw-oh-5Ob">
             <objects>
-                <viewController id="v9x-Nr-o6b" customClass="BookInformationViewController" customModule="Wander_Books" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookInformationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="v9x-Nr-o6b" customClass="BookInformationViewController" customModule="Wander_Books" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sYF-IV-x12">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
