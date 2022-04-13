@@ -11,7 +11,7 @@
         <!--Quiz View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="Quiz" id="Y6W-OH-hqX" customClass="QuizViewController" customModule="Wander_Books" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuizViewController" modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="QuizViewController" customModule="Wander_Books" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,6 +143,7 @@
                             <constraint firstItem="hKc-ag-AVX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="y2J-9L-L8s"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="VZk-aJ-J4f"/>
                     <connections>
                         <outlet property="choiceButton1" destination="NZ1-Zy-ewx" id="h5L-qs-5Ze"/>
                         <outlet property="choiceButton2" destination="x6X-Sg-UTt" id="LmE-Vf-HtS"/>
@@ -156,11 +157,22 @@
                         <outletCollection property="buttons" destination="x6X-Sg-UTt" collectionClass="NSMutableArray" id="bbN-bh-e9A"/>
                         <outletCollection property="buttons" destination="5mL-TG-zrw" collectionClass="NSMutableArray" id="Lm9-BD-YmH"/>
                         <outletCollection property="buttons" destination="D7v-JO-ZBF" collectionClass="NSMutableArray" id="7sg-sC-KaC"/>
+                        <segue destination="fMb-iQ-TTQ" kind="show" identifier="BookInformationViewController" id="0NT-WP-gUH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="941.53846153846155" y="83.175355450236964"/>
+            <point key="canvasLocation" x="1870.7692307692307" y="83.175355450236964"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="NcH-wW-w4A">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="Main" id="fMb-iQ-TTQ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="wnE-XE-IuJ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AIc-vW-s2m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2735" y="111"/>
         </scene>
     </scenes>
     <resources>

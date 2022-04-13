@@ -58,11 +58,8 @@ class QuizViewController: UIViewController {
                 let nextQuestion = gameModels[index+1]
                 configureUI(question: nextQuestion)
             } else {
-                showFeedback()
                 //if get to the last question, end quiz
-//                let alert = UIAlertController(title:"Done!", message: "Woohoo! You got \(point) points!", preferredStyle: .alert)
-//                alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
-//                present(alert, animated: true)
+                showFeedback()
             }
         }
     }
@@ -73,13 +70,10 @@ class QuizViewController: UIViewController {
         present(alert, animated: true)
     }
     
-    
     private func segueBacktoBookInfo(){
-        let bookInfo = UIStoryboard(name: "BookInformation", bundle: nil)
-        let viewController = bookInfo.instantiateViewController(withIdentifier: "BookInformationViewController")
-        
-//        present(viewController, animated: true)
-        self.navigationController?.pushViewController(viewController, animated: true)
+        let mainPage = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = mainPage.instantiateViewController(withIdentifier: "Main")
+        mainViewController.modalPresentationStyle = .fullScreen
     }
     
     private func deselectAllButtons(){
@@ -97,8 +91,6 @@ class QuizViewController: UIViewController {
         //generate UI
         questionTextView.text = question.text
         questionCoverImage.image = question.questionImage
-        
-        
         
         
         let currIndex = gameModels.firstIndex(where: {$0.text == currentQuestion?.text}) ?? 0
