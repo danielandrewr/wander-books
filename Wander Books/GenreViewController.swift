@@ -82,3 +82,18 @@ extension GenreViewController: UICollectionViewDelegateFlowLayout {
 //        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 //    }
 }
+
+extension GenreViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            let bookInfoStoryboard = UIStoryboard(name: "BookInformation", bundle: nil)
+            let bookInfoVC = bookInfoStoryboard.instantiateViewController(withIdentifier: "BookInformationViewController") as! BookInformationViewController
+                
+            // Set selectedGenre's value to the tapped genre.
+            bookInfoVC.selectedBook = filteredBook[indexPath.row] 
+                
+            // Take user to genreViewController
+            self.navigationController?.pushViewController(bookInfoVC, animated: true)
+    }
+}
+
+
