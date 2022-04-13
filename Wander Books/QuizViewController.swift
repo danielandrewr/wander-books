@@ -18,6 +18,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBarView: UIProgressView!
     @IBOutlet var buttons: [UIButton]!
+    
     //Data
     var gameModels = [Question]()
     var currentQuestion: Question?
@@ -38,8 +39,6 @@ class QuizViewController: UIViewController {
     }
     
     @IBAction func nextButtonAction(_ sender: UIButton) {
-        
-//        let choiceButtons: [UIButton] = [choiceButton1,choiceButton2,choiceButton3,choiceButton4]
         guard let question = currentQuestion else{
             return
         }
@@ -50,7 +49,8 @@ class QuizViewController: UIViewController {
         if checkAnswer(answer: answer, question: question){
             point = point + 1
         }
-
+        deselectAllButtons()
+        
         //find the index
         if let index = gameModels.firstIndex(where: {$0.text == currentQuestion?.text}){
             if index < (gameModels.count-1){
@@ -64,8 +64,6 @@ class QuizViewController: UIViewController {
                 present(alert, animated: true)
             }
         }
-        
-        
     }
     
     private func deselectAllButtons(){
@@ -87,9 +85,8 @@ class QuizViewController: UIViewController {
         progressLabel.text = "\(currIndex+1) / \(gameModels.count)"
         progressBarView.setProgress((Float(currIndex+1)/Float(gameModels.count)), animated: true)
         
-        let choiceButtons: [UIButton] = [choiceButton1,choiceButton2,choiceButton3,choiceButton4]
-        for button in choiceButtons {
-            let index = choiceButtons.firstIndex(of: button) ?? 0
+        for button in buttons {
+            let index = buttons.firstIndex(of: button) ?? 0
             button.setTitle(question.answers[index].text, for: .normal)
         }
     }
