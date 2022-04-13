@@ -26,12 +26,11 @@ class BookReadingViewController: UIViewController {
         print(selectedBook.title)
         print(selectedBook.bookTexts?[0] ?? "Failed to Load")
         print(selectedBook.isOwned)
-        
-//        bookContent.append(Book(title: "The Tortoise and the Hare", author: "Aesop", cover: UIImage(named: "Dummy1"), notOwnedCover: UIImage(named: "Dummy3"), genre: ["Fable", "Fantasy", "Comedy"], isOwned: false, requiredPoints: 10, bookPages: nil, bookTexts: ["Pada suatu ketika, hiduplah seekor kelinci. Si kelinci menghabiskan sepanjang hari membual ke hewan lain mengenai kemampuan berlalrinya. “Lihatlah seberapa cepat aku bisa berlari!", "Si kelinci berlalri melintasi lapangan secepat mungkin. Semua hewan setuju bahwa si kelinci sangat cepat.", "Kemudian, si kelinci melihat seekor kura-kura dari kejauhan. Si kelinci menertawai si kura-kura dan berkata, “Aku adalah pelari tercepat di hutan ini dan kamu adalah yang paling lambat! Kita harus melakukan lomba lari!”.  Si kura-kura yang sudah lelah dengan kesombongan kelinci pun menyetujui hal tersebut.", "Keesokan harinya, semua hewan di hutan berkumpul untuk menyaksikan kompetisi tersebut. Semuanya ingin melihat apakah si kura-kura bisa mengalahkan kelinci.", "Si beruang memulai lomba dengan berteriak, “Bersiap… dan mulai!” ", "Si kelinci langsung berlari sekencang mungkin, jauh mendahului kura-kura. Kelinci terus berlari sampai kura-kura tidak lagi terlihat sampai ujung mata memandang. “Tidak usah buru-buru!” teriak kelinci kepada kura-kura. “Aku bisa saja menikmati makanan sekarang dan akan tetap menang!”", "Puas dengan hasilnya, kelinci sombong itu mengambil waktunya untuk beristirahat di sebelah pohon. Keteduhan pohon yang sejuk sangat menenangkan si kelinci sehingga ia tertidur pulas.", "Sementara itu, si kura-kura terus berjalan perlahan melintasi lapangan. Akhirnya, kura-kura melihat kelinci yang sedang tertidur pulas di bawah pohon dan berjalan melewatinya.  ", "Para hewan yang menonton pertandingan ini menjadi semakin semangat. “Ayo, kura-kura!” teriak hewan-hewan lain. “Sedikit lagi. Maju terus, kawan!”", "Mendengar suara teriakan dari kejauhan, kelinci pun terbangun. Ia melihat ke seberang lapangan dan tampak si kura-kura sudah akan mencapai garis akhir. Dengan cepat, kelinci langsung berlari untuk mengejar.", "Tetapi, kelinci sudah terlambat. Si kura-kura telah memenangkan pertandingan. “Kamu tidak selalu harus menjadi yang tercepat untuk menang,” ucap kura-kura kepada kelinci, yang sedang menangis tersedu-sedu."]))
         titleLabel.text = selectedBook.title
         authorLabel.text = selectedBook.author
+//        let newImage = self.resizeImage(image: selectedBook.cover!, targetSize: CGSize(width: 390, height: 339))
         coverImageView.image = selectedBook.cover
-        
+
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(onSwipeLeftEvent))
         swipeLeft.direction = .left
         self.view.addGestureRecognizer(swipeLeft)
@@ -44,4 +43,30 @@ class BookReadingViewController: UIViewController {
         readerViewControl.modalPresentationStyle = .fullScreen
         present(readerViewControl, animated: true, completion: nil)
     }
+    
+//    private func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+//       let size = image.size
+//
+//       let widthRatio  = targetSize.width  / size.width
+//       let heightRatio = targetSize.height / size.height
+//
+//       // Figure out what our orientation is, and use that to form the rectangle
+//       var newSize: CGSize
+//       if(widthRatio > heightRatio) {
+//           newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+//       } else {
+//           newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+//       }
+//
+//       // This is the rect that we've calculated out and this is what is actually used below
+//       let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+//
+//       // Actually do the resizing to the rect using the ImageContext stuff
+//       UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+//       image.draw(in: rect)
+//       let newImage = UIGraphicsGetImageFromCurrentImageContext()
+//       UIGraphicsEndImageContext()
+//
+//       return newImage!
+//   }
 }
