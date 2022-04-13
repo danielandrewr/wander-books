@@ -10,6 +10,8 @@ import UIKit
 
 class LibraryViewController: UIViewController {
     
+    var filter: String = ""
+    
     @IBOutlet weak var booksCollection: UICollectionView!
     
     @IBOutlet weak var btnFilter: UIButton!
@@ -59,7 +61,8 @@ class LibraryViewController: UIViewController {
             if let arr = self.btnFilter.menu{
                 for chosenMenu in arr.children {
                     if chosenMenu.title == action.title {
-                       print(chosenMenu)
+                        print(chosenMenu.title)
+                        self.filter = chosenMenu.title
                     }
                 }
             }
@@ -77,11 +80,6 @@ class LibraryViewController: UIViewController {
     
 }
 
-func handleTapFilter(){
-    print("tap handler")
-    
-}
-
 extension LibraryViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -92,6 +90,7 @@ extension LibraryViewController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! LibraryCollectionViewCell
         cell.configure(with: books[indexPath.row])
+        
         return cell
     }
 }
@@ -104,8 +103,18 @@ extension LibraryViewController: UICollectionViewDelegateFlowLayout {
 
 extension LibraryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(books[indexPath.row].title)
+        
+        let bookInfoStoryboard = UIStoryboard(name: "BookInformation", bundle: nil)
+        let bookInfoVC = bookInfoStoryboard.instantiateViewController(withIdentifier: "BookInformationViewController") as! BookInformationViewController
+                        
+        // Set selectedGenre's value to the tapped genre.
+        bookInfoVC.selectedBook = books[indexPath.row]
+                        
+        // Take user to genreViewController
+        self.navigationController?.pushViewController(bookInfoVC, animated: true)
+        
     }
+    
 }
 
 
