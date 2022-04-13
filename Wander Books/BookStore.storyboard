@@ -296,10 +296,10 @@
         <!--BookInformation-->
         <scene sceneID="HvP-Cj-GDz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ACA-O2-NV9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="BookInformation" id="sqI-js-yfS" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Y4t-fj-j3K"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ACA-O2-NV9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="822" y="560"/>
         </scene>
