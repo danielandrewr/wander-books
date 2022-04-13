@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1F9E0F0A2806A3590067C4CB /* LibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9E0F092806A3590067C4CB /* LibraryCollectionViewCell.swift */; };
+		26D3A6D72806F644004412E2 /* Panel 1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 26D3A6D62806F644004412E2 /* Panel 1.mp4 */; };
+		26D3A6D92806FF87004412E2 /* Panel 2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 26D3A6D82806FF87004412E2 /* Panel 2.mp4 */; };
+		26D3A6DB2806FFA0004412E2 /* Panel 4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 26D3A6DA2806FFA0004412E2 /* Panel 4.mp4 */; };
+		26D3A6DD2806FFB4004412E2 /* Panel 7.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 26D3A6DC2806FFB4004412E2 /* Panel 7.mp4 */; };
+		26D3A6DF2806FFC7004412E2 /* Panel 8.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 26D3A6DE2806FFC7004412E2 /* Panel 8.mp4 */; };
+		26D3A6E12806FFDA004412E2 /* Panel 9.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 26D3A6E02806FFDA004412E2 /* Panel 9.mp4 */; };
 		26E599E82805E95C0038CC5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E599E72805E95C0038CC5F /* AppDelegate.swift */; };
 		26E599EA2805E95C0038CC5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E599E92805E95C0038CC5F /* SceneDelegate.swift */; };
 		26E599EF2805E95C0038CC5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E599ED2805E95C0038CC5F /* Main.storyboard */; };
@@ -34,6 +40,12 @@
 
 /* Begin PBXFileReference section */
 		1F9E0F092806A3590067C4CB /* LibraryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCollectionViewCell.swift; sourceTree = "<group>"; };
+		26D3A6D62806F644004412E2 /* Panel 1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Panel 1.mp4"; path = "Assets.xcassets/Panel 1.dataset/Panel 1.mp4"; sourceTree = "<group>"; };
+		26D3A6D82806FF87004412E2 /* Panel 2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Panel 2.mp4"; path = "Assets.xcassets/Panel 2.dataset/Panel 2.mp4"; sourceTree = "<group>"; };
+		26D3A6DA2806FFA0004412E2 /* Panel 4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Panel 4.mp4"; path = "Assets.xcassets/Panel 4.dataset/Panel 4.mp4"; sourceTree = "<group>"; };
+		26D3A6DC2806FFB4004412E2 /* Panel 7.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Panel 7.mp4"; path = "Assets.xcassets/Panel 7.dataset/Panel 7.mp4"; sourceTree = "<group>"; };
+		26D3A6DE2806FFC7004412E2 /* Panel 8.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Panel 8.mp4"; path = "Assets.xcassets/Panel 8.dataset/Panel 8.mp4"; sourceTree = "<group>"; };
+		26D3A6E02806FFDA004412E2 /* Panel 9.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Panel 9.mp4"; path = "Assets.xcassets/Panel 9.dataset/Panel 9.mp4"; sourceTree = "<group>"; };
 		26E599E42805E95C0038CC5F /* Wander Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wander Books.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26E599E72805E95C0038CC5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26E599E92805E95C0038CC5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +126,12 @@
 				26E59A192805F3640038CC5F /* SpecificGenreCollectionViewCell.swift */,
 				26E59A1B2805F39B0038CC5F /* GenreViewController.swift */,
 				1F9E0F092806A3590067C4CB /* LibraryCollectionViewCell.swift */,
+				26D3A6D62806F644004412E2 /* Panel 1.mp4 */,
+				26D3A6D82806FF87004412E2 /* Panel 2.mp4 */,
+				26D3A6DA2806FFA0004412E2 /* Panel 4.mp4 */,
+				26D3A6DC2806FFB4004412E2 /* Panel 7.mp4 */,
+				26D3A6DE2806FFC7004412E2 /* Panel 8.mp4 */,
+				26D3A6E02806FFDA004412E2 /* Panel 9.mp4 */,
 			);
 			path = "Wander Books";
 			sourceTree = "<group>";
@@ -178,13 +196,19 @@
 			files = (
 				26E59A002805E9A40038CC5F /* BookInformation.storyboard in Resources */,
 				26E599F42805E95D0038CC5F /* LaunchScreen.storyboard in Resources */,
+				26D3A6DB2806FFA0004412E2 /* Panel 4.mp4 in Resources */,
 				26E599F12805E95D0038CC5F /* Assets.xcassets in Resources */,
+				26D3A6D92806FF87004412E2 /* Panel 2.mp4 in Resources */,
+				26D3A6DD2806FFB4004412E2 /* Panel 7.mp4 in Resources */,
 				26E599FC2805E9890038CC5F /* Library.storyboard in Resources */,
 				26E59A042805E9C20038CC5F /* ContentBookReading.storyboard in Resources */,
 				26E59A062805E9CE0038CC5F /* Quiz.storyboard in Resources */,
 				26E599EF2805E95C0038CC5F /* Main.storyboard in Resources */,
+				26D3A6DF2806FFC7004412E2 /* Panel 8.mp4 in Resources */,
+				26D3A6D72806F644004412E2 /* Panel 1.mp4 in Resources */,
 				26E59A022805E9AF0038CC5F /* BookReading.storyboard in Resources */,
 				26E599FE2805E9950038CC5F /* BookStore.storyboard in Resources */,
+				26D3A6E12806FFDA004412E2 /* Panel 9.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
