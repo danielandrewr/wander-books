@@ -23,6 +23,7 @@ class QuizViewController: UIViewController {
     var gameModels = [Question]()
     var currentQuestion: Question?
     var point: Int = 0
+    var selectedBook: Book = Book(title: "", author: "", genre: [], isOwned: false, requiredPoints: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,12 @@ class QuizViewController: UIViewController {
     
     
     //functions
+    
+    @IBAction func closeQuiz(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
+    
     @IBAction func buttonSelection (_ sender: UIButton){
         deselectAllButtons()
         sender.isSelected = true
@@ -64,6 +71,8 @@ class QuizViewController: UIViewController {
         }
     }
     
+    
+    
     private func showFeedback(){
         let alert = UIAlertController(title:"Done!", message: "Woohoo! You got \(point) points!", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: {action in self.segueBacktoBookInfo()}))
@@ -74,6 +83,7 @@ class QuizViewController: UIViewController {
         let mainPage = UIStoryboard(name: "Main", bundle: nil)
         let mainViewController = mainPage.instantiateViewController(withIdentifier: "Main")
         mainViewController.modalPresentationStyle = .fullScreen
+        present(mainViewController, animated: true)
     }
     
     private func deselectAllButtons(){
