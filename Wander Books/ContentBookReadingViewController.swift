@@ -27,7 +27,7 @@ class ContentBookReadingViewController: UIViewController, UIGestureRecognizerDel
     private var player: AVPlayer!
     private var playerLayer: AVPlayerLayer!
     
-    private var videoArray: [String] = ["Panel 1", "Panel 2", "Panel 4", "Panel 7", "Panel 8", "Panel 9"]
+    private var videoArray: [String] = ["Panel 1"]
     
     var selectedBook: Book = Book(title: "", author: "", genre: [], isOwned: false, requiredPoints: 0)
     
@@ -94,54 +94,54 @@ class ContentBookReadingViewController: UIViewController, UIGestureRecognizerDel
             illustrationView.isHidden = false
             print(currentIndex)
         case 1: //2
-            setAVPlayer(stringPath: videoArray[1])
-            IllustrationImage.isHidden = true
-            illustrationView.isHidden = false
-            print(currentIndex)
-        case 2: //3
             IllustrationImage.isHidden = false
             illustrationView.isHidden = true
             IllustrationImage.image = selectedBook.bookPages?[0]
             print(currentIndex)
-        case 3: //4
-            setAVPlayer(stringPath: videoArray[2])
-            IllustrationImage.isHidden = true
-            illustrationView.isHidden = false
-            print(currentIndex)
-        case 4: //5
+        case 2: //3
             IllustrationImage.isHidden = false
             illustrationView.isHidden = true
             IllustrationImage.image = selectedBook.bookPages?[1]
             print(currentIndex)
-        case 5: //6
+        case 3: //4
             IllustrationImage.isHidden = false
             illustrationView.isHidden = true
             IllustrationImage.image = selectedBook.bookPages?[2]
             print(currentIndex)
-        case 6: //7
-            setAVPlayer(stringPath: videoArray[3])
-            IllustrationImage.isHidden = true
-            illustrationView.isHidden = false
-            print(currentIndex)
-        case 7: //8
-            setAVPlayer(stringPath: videoArray[4])
-            IllustrationImage.isHidden = true
-            illustrationView.isHidden = false
-            print(currentIndex)
-        case 8: //9
-            setAVPlayer(stringPath: videoArray[5])
-            IllustrationImage.isHidden = true
-            illustrationView.isHidden = false
-            print(currentIndex)
-        case 9:
+        case 4: //5
             IllustrationImage.isHidden = false
             illustrationView.isHidden = true
             IllustrationImage.image = selectedBook.bookPages?[3]
             print(currentIndex)
-        case 10:
+        case 5: //6
             IllustrationImage.isHidden = false
             illustrationView.isHidden = true
             IllustrationImage.image = selectedBook.bookPages?[4]
+            print(currentIndex)
+        case 6: //7
+            IllustrationImage.isHidden = false
+            illustrationView.isHidden = true
+            IllustrationImage.image = selectedBook.bookPages?[5]
+            print(currentIndex)
+        case 7: //8
+            IllustrationImage.isHidden = false
+            illustrationView.isHidden = true
+            IllustrationImage.image = selectedBook.bookPages?[6]
+            print(currentIndex)
+        case 8: //9
+            IllustrationImage.isHidden = false
+            illustrationView.isHidden = true
+            IllustrationImage.image = selectedBook.bookPages?[7]
+            print(currentIndex)
+        case 9:
+            IllustrationImage.isHidden = false
+            illustrationView.isHidden = true
+            IllustrationImage.image = selectedBook.bookPages?[8]
+            print(currentIndex)
+        case 10:
+            IllustrationImage.isHidden = false
+            illustrationView.isHidden = true
+            IllustrationImage.image = selectedBook.bookPages?[9]
             print(currentIndex)
         default:
             IllustrationImage.isHidden = true
