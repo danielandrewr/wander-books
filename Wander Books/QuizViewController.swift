@@ -8,27 +8,138 @@
 import UIKit
 
 class QuizViewController: UIViewController {
+
+    @IBOutlet weak var questionCoverImage: UIImageView!
+    @IBOutlet weak var questionTextView: UITextView!
+    @IBOutlet weak var choiceButton1: UIButton!
+    @IBOutlet weak var choiceButton2: UIButton!
+    @IBOutlet weak var choiceButton3: UIButton!
+    @IBOutlet weak var choiceButton4: UIButton!
+    @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var progressBarView: UIProgressView!
+    @IBOutlet var buttons: [UIButton]!
+    @IBOutlet weak var userCoinLabel: UILabel!
     
-    private var bookContent = [Book]()
-
-    @IBOutlet weak var questionProgressBar: UIProgressView!
-    @IBOutlet weak var quizImageView: UIImageView!
-    @IBOutlet weak var quizQuestion: UITextView!
-    @IBOutlet weak var firstOption: UIButton!
-    @IBOutlet weak var secondOption: UIButton!
-    @IBOutlet weak var thirdOption: UIButton!
-    @IBOutlet weak var fourthOption: UIButton!
-    @IBOutlet weak var nextButton: UIButton!
-    private var currentQuestion: Int = 0
-
+    //Data
+    var gameModels = [Question]()
+    var currentQuestion: Question?
+    var point: Int = 0
+    var selectedBook: Book = Book(title: "", author: "", genre: [], isOwned: false, requiredPoints: 0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        bookContent.append(Book(title: "The Tortoise and the Hare", author: "Aesop", cover: UIImage(named: "Dummy1"), notOwnedCover: UIImage(named: "Dummy3"), genre: ["Fable", "Fantasy", "Comedy"], isOwned: false, requiredPoints: 10, bookPages: nil, bookTexts: ["Pada suatu ketika, hiduplah seekor kelinci. Si kelinci menghabiskan sepanjang hari membual ke hewan lain mengenai kemampuan berlalrinya. “Lihatlah seberapa cepat aku bisa berlari!", "Si kelinci berlalri melintasi lapangan secepat mungkin. Semua hewan setuju bahwa si kelinci sangat cepat.", "Kemudian, si kelinci melihat seekor kura-kura dari kejauhan. Si kelinci menertawai si kura-kura dan berkata, “Aku adalah pelari tercepat di hutan ini dan kamu adalah yang paling lambat! Kita harus melakukan lomba lari!”.  Si kura-kura yang sudah lelah dengan kesombongan kelinci pun menyetujui hal tersebut.", "Keesokan harinya, semua hewan di hutan berkumpul untuk menyaksikan kompetisi tersebut. Semuanya ingin melihat apakah si kura-kura bisa mengalahkan kelinci.", "Si beruang memulai lomba dengan berteriak, “Bersiap… dan mulai!” ", "Si kelinci langsung berlari sekencang mungkin, jauh mendahului kura-kura. Kelinci terus berlari sampai kura-kura tidak lagi terlihat sampai ujung mata memandang. “Tidak usah buru-buru!” teriak kelinci kepada kura-kura. “Aku bisa saja menikmati makanan sekarang dan akan tetap menang!”", "Puas dengan hasilnya, kelinci sombong itu mengambil waktunya untuk beristirahat di sebelah pohon. Keteduhan pohon yang sejuk sangat menenangkan si kelinci sehingga ia tertidur pulas.", "Sementara itu, si kura-kura terus berjalan perlahan melintasi lapangan. Akhirnya, kura-kura melihat kelinci yang sedang tertidur pulas di bawah pohon dan berjalan melewatinya.  ", "Para hewan yang menonton pertandingan ini menjadi semakin semangat. “Ayo, kura-kura!” teriak hewan-hewan lain. “Sedikit lagi. Maju terus, kawan!”", "Mendengar suara teriakan dari kejauhan, kelinci pun terbangun. Ia melihat ke seberang lapangan dan tampak si kura-kura sudah akan mencapai garis akhir. Dengan cepat, kelinci langsung berlari untuk mengejar.", "Tetapi, kelinci sudah terlambat. Si kura-kura telah memenangkan pertandingan. “Kamu tidak selalu harus menjadi yang tercepat untuk menang,” ucap kura-kura kepada kelinci, yang sedang menangis tersedu-sedu."]))
-        
-            
+//        questionCoverImage.image = UIImage(named: "Dummy1")
+        setupQuestions()
+        configureUI(question: gameModels.first!)
+        userCoinLabel.text = "\(userCoin)"
     }
     
-    @IBAction func nextButtonPressed(_ sender: Any) {
+    
+    //functions
+    
+    @IBAction func closeQuiz(_ sender: Any) {
+        self.dismiss(animated: true)
     }
+    
+    
+    @IBAction func buttonSelection (_ sender: UIButton){
+        deselectAllButtons()
+        sender.isSelected = true
+    }
+    
+    @IBAction func nextButtonAction(_ sender: UIButton) {
+        guard let question = currentQuestion else{
+            return
+        }
+        let index = buttons.firstIndex(where: {$0.isSelected == true}) ?? 0
+        let answer = question.answers[index]
+
+        //if answer is correct, gain 1 point
+        if checkAnswer(answer: answer, question: question){
+            point = point + 1
+        }
+        
+        deselectAllButtons()
+        //find the index
+        if let index = gameModels.firstIndex(where: {$0.text == currentQuestion?.text}){
+            if index < (gameModels.count-1){
+                //continue to next question
+                let nextQuestion = gameModels[index+1]
+                configureUI(question: nextQuestion)
+            } else {
+                //if get to the last question, end quiz
+                userCoin += point
+                showFeedback()
+                
+            }
+        }
+    }
+    
+    
+    
+    private func showFeedback(){
+        let alert = UIAlertController(title:"Done!", message: "Woohoo! You got \(point) points!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: {action in self.segueBacktoBookInfo()}))
+        present(alert, animated: true)
+    }
+    
+    private func segueBacktoBookInfo(){
+        let mainPage = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = mainPage.instantiateViewController(withIdentifier: "Main")
+        mainViewController.modalPresentationStyle = .fullScreen
+        present(mainViewController, animated: true)
+    }
+    
+    private func deselectAllButtons(){
+        for buttonElement in buttons {
+            if let button = buttonElement as UIButton?{
+                button.isSelected = false
+            }
+        }
+    }
+    
+    private func configureUI(question: Question){
+        //create the questions and choices
+        currentQuestion = question
+        
+        //generate UI
+        questionTextView.text = question.text
+        questionCoverImage.image = question.questionImage
+        
+        
+        let currIndex = gameModels.firstIndex(where: {$0.text == currentQuestion?.text}) ?? 0
+        progressLabel.text = "\(currIndex+1) / \(gameModels.count)"
+        progressBarView.setProgress((Float(currIndex+1)/Float(gameModels.count)), animated: true)
+        
+        for button in buttons {
+            let index = buttons.firstIndex(of: button) ?? 0
+            button.setTitle(question.answers[index].text, for: .normal)
+        }
+    }
+    
+    private func checkAnswer(answer: Answer, question: Question) -> Bool{
+        return question.answers.contains(where: {$0.text == answer.text}) && answer.correct
+    }
+    
+    private func setupQuestions(){
+        gameModels.append(Question(text: "Siapa yang sering menyombongkan kemampuan berlarinya?", questionImage: UIImage(named: "Panel 3"), answers: [
+                Answer(text: "tupai", correct: false),
+                Answer(text: "rubah", correct: false),
+                Answer(text: "kelinci", correct: true),
+                Answer(text: "beruang", correct: false)
+        ]))
+        gameModels.append(Question(text: "Siapa yang memulaikan lomba lari antara kelinci dan kura-kura?", questionImage: UIImage(named: "Panel 5"), answers: [
+                Answer(text: "rubah", correct: false),
+                Answer(text: "beruang", correct: true),
+                Answer(text: "kura-kura", correct: false),
+                Answer(text: "kelinci", correct: false)
+        ]))
+        gameModels.append(Question(text: "Dimanakah kelinci beristirahat di tengah lomba lari?", questionImage: UIImage(named: "Panel 10"), answers: [
+                Answer(text: "di rumah", correct: false),
+                Answer(text: "di padang bunga", correct: false),
+                Answer(text: "di tepi danau", correct: false),
+                Answer(text: "di bawah pohon", correct: true)
+        ]))
+    }
+
 }

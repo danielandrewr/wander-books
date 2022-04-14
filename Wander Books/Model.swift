@@ -52,3 +52,14 @@ let genreSeed = [
 
 //User's coin
 var userCoin = 0
+
+struct Question {
+    let text: String
+    let questionImage: UIImage?
+    let answers: [Answer]
+}
+
+struct Answer{
+    let text: String
+    let correct: Bool
+}

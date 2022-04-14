@@ -86,13 +86,25 @@
                         <outlet property="IllustrationImage" destination="nlM-vW-tyM" id="4LX-LQ-K6e"/>
                         <outlet property="illustrationView" destination="jsN-g8-UBQ" id="hIk-iv-VQ9"/>
                         <outlet property="pageInfo" destination="Oay-Dd-Wz6" id="ua9-ah-HOB"/>
+                        <segue destination="J6C-dX-1tV" kind="show" id="fT5-Tr-U86"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftZ-mp-jR7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2321.739130434783" y="553.125"/>
         </scene>
+        <!--Quiz-->
+        <scene sceneID="MqN-uz-UOE">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="QuizViewController" storyboardName="Quiz" referencedIdentifier="QuizViewController" id="J6C-dX-1tV" userLabel="Quiz" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="sYK-9e-cQB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v4O-09-2uH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2970" y="525"/>
+        </scene>
     </scenes>
+    <color key="tintColor" red="0.44705882349999998" green="0.69803921570000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
     <resources>
         <image name="xmark.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">

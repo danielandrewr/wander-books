@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Library-->
         <scene sceneID="0G0-Ze-VLz">
             <objects>
                 <viewController id="gnD-eu-akA" customClass="LibraryViewController" customModule="Wander_Books" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,7 +84,7 @@
                             <constraint firstItem="Hgi-IT-1Zr" firstAttribute="trailing" secondItem="jKD-zm-RQ0" secondAttribute="trailing" constant="20" id="jpj-38-ush"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="books.vertical" catalog="system" id="049-5d-2Mz"/>
+                    <tabBarItem key="tabBarItem" title="Library" image="books.vertical" catalog="system" id="049-5d-2Mz"/>
                     <navigationItem key="navigationItem" id="Jhl-pj-Bxb"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -115,6 +115,7 @@
             <point key="canvasLocation" x="2.8985507246376816" y="-378.34821428571428"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.44705882349999998" green="0.69803921570000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
     <resources>
         <image name="books.vertical" catalog="system" width="128" height="107"/>
         <image name="line.3.horizontal.decrease.circle" catalog="system" width="128" height="121"/>

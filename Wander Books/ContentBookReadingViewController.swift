@@ -68,6 +68,14 @@ class ContentBookReadingViewController: UIViewController, UIGestureRecognizerDel
         if (currentIndex < (selectedBook.bookTexts!.count - 1)) {
             currentIndex += 1
             updatePage()
+        } else if currentIndex == (selectedBook.bookTexts!.count - 1) {
+            //go to quiz page
+            let quizPage = UIStoryboard(name: "Quiz", bundle: nil)
+            let quizViewControl = quizPage.instantiateViewController(withIdentifier: "QuizViewController") as! QuizViewController
+            quizViewControl.selectedBook = selectedBook
+//            self.navigationController?.pushViewController(quizViewControl, animated: true)
+//            quizViewControl.modalPresentationStyle = .fullScreen
+            present(quizViewControl, animated: true)
         }
     }
     
